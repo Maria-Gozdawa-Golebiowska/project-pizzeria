@@ -75,9 +75,9 @@
     },
 
     db: {
-      url: '//localhost:3131',
-      products: 'products',
-      orders: 'orders',
+      url: "//localhost:3131",
+      products: "products",
+      orders: "orders",
     },
   };
   
@@ -430,7 +430,7 @@
     }
     sendOrder() {
       const thisCart = this;
-      const url = 'http:' + settings.db.url + '/' + settings.db.products;
+      const url = 'http://' + settings.db.url + '/' + settings.db.orders;
       const payload = {
         address: thisCart.dom.address.value,
         phone: thisCart.dom.phone.value,
@@ -454,9 +454,6 @@
     }
   }
   
-
-
-
 
   class CartProduct {
     constructor(menuProduct, element) {
@@ -494,9 +491,6 @@
     };
     return productSummary;
   }
-
-
-
 
   initAmountWidget() {
     const thisCartProduct = this;
@@ -536,14 +530,18 @@
 
   }
 
-
 const app = {
-  initMenu: function () {
-    const thisApp = this;
-    for (let productData in thisApp.data.products) {
-      new Product(thisApp.data.products[productData].id, thisApp.data.products[productData]);
-    }
-  },
+
+   initMenu: function () {
+      const thisApp = this;
+
+      for (let productData in thisApp.data.products) {
+        new Product(
+          thisApp.data.products[productData].id,
+          thisApp.data.products[productData]
+        );
+      }
+    },
 
   initCart: function(){
     const thisApp = this;
@@ -557,25 +555,26 @@ const app = {
     const thisApp = this;
 
     thisApp.data = {};
-    const url = 'http:' + settings.db.url + '/' + settings.db.products;
 
+    const url = settings.db.url + "/" + settings.db.products;
 
     fetch(url)
-    .then(function(rawResponse){
-      return rawResponse.json();
-    })
+      .then(function (rawResponse) {
+        return rawResponse.json();
+      })
+      .then(function (parsedResponse) {
+        console.log("parsedResponse", parsedResponse);
 
-    .then(function(parsedResponse){
-      console.log('parsedResponse', parsedResponse);
-    
-      //save parsedResponse at thisApp.data.products
-      thisApp.data.products = parsedResponse;
+        /* save parsedResponse as thisApp.data.products */
+        thisApp.data.products = parsedResponse;
 
-      //execute initMenu method
-      app.initMenu();
-    });
-    console.log('thisApp.data', JSON.stringify(thisApp.data));
+        /* execute initMenu method */
+        thisApp.initMenu();
+      });
+
+    console.log("thisApp.data", JSON.stringify(thisApp.data));
   },
+
   init: function () {
     const thisApp = this;
     thisApp.initData();
