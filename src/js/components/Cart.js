@@ -87,11 +87,6 @@ class Cart {
       const totalPriceSummary = document.querySelector('.cart__order-total .cart__order-price-sum strong');
       totalPriceSummary.innerHTML = thisCart.totalPrice.toFixed(2);
     
-    
-      console.log("totalNumber:", thisCart.totalNumber);
-      console.log("subtotalPrice:", thisCart.subtotalPrice);
-      console.log("deliveryFee:", thisCart.deliveryFee);
-      console.log("totalPrice:", thisCart.totalPrice);
     }
 
     remove(menuProduct) {
