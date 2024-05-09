@@ -102,23 +102,23 @@ export  const settings = {
     hours: {
       open: 12,
       close: 24,
-  },
-  datePicker: {
+    },
+    datePicker: {
       maxDaysInFuture: 14,
-  },
-  booking: {
+    },
+    booking: {
       tableIdAttribute: 'data-table',
-  },
+    },
     db: {
       url: "//localhost:3131",
       products: "products",
       orders: "orders",
       bookings: 'bookings',
-        events: 'events',
-        dateStartParamKey: 'date_gte',
-        dateEndParamKey: 'date_lte',
-        notRepeatParam: 'repeat=false',
-        repeatParam: 'repeat_ne=false',
+      events: 'events',
+      dateStartParamKey: 'date_gte',
+      dateEndParamKey: 'date_lte',
+      notRepeatParam: 'repeat=false',
+      repeatParam: 'repeat_ne=false',
     },
   };
   

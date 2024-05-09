@@ -255,7 +255,18 @@
         "starters": ["lemonWater"]
       }
     ],
-    "bookings": []
+    "bookings": [
+      {
+      "id": 5,
+      "date": "2024-05-07",
+      "hour": "18:00",
+      "table": 2,
+      "repeat": "daily",
+      "duration": 2,
+      "ppl": 3,
+      "starters": ["lemonWater"]
+    }
+   ]
 }
 
 
