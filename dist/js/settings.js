@@ -89,13 +89,12 @@ export const classNames = {
   }
   };
   
-export  const settings = {
+export const settings = {
     amountWidget: {
       defaultValue: 1,
       defaultMin: 1,
       defaultMax: 9,
     }, 
-
     cart: {
       defaultDeliveryFee: 20,
     },
