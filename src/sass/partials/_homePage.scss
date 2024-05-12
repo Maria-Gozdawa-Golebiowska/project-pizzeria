@@ -1,0 +1,277 @@
+.home-wrapper {
+    margin: ($base-size * 3.5) auto;
+    padding: ($base-size * 6) ($base-size * 4);
+    background: $color-light;
+    border-bottom: 1px solid lighten($color-dark, 70%);
+    border-radius: $radius;
+
+
+    .home-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .home-options {
+        position: relative;
+        flex: 0 50%;
+        text-align: center;
+        height: 100px;
+        padding: 0 5px;
+    }
+
+    .options-gallery {
+        img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+    }
+
+    .options-title {
+        position: absolute;
+        display: block;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+
+        h4 {
+            opacity: 0;
+            color: $color-light;
+        }
+    }
+
+    .home-options:hover {
+        .options-title {
+            top: 50%;
+            transition: 2s;
+
+            h4 {
+                opacity: 9;
+            }
+        }
+    }
+
+    h2 {
+        color: $color-light;
+    }
+
+    .opening {
+        position: relative;
+        background: $color-main;
+        color: $color-light;
+        height: 120px;
+        margin: 0 5px;
+        border-radius: 6px;
+
+        h2 {
+            margin: auto;
+        }
+    }
+
+    .opening-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .carousel {
+        margin: 75px 5px;
+        background: $color-light;
+    }
+
+    .carousel-cell {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        height: 190px;
+        border-radius: 5px;
+        margin-bottom: 30px;
+    }
+
+    .carousel-picture {
+        flex: 1;
+        height: 190px;
+        width: 190px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .carousel-text {
+        flex: 1;
+        width: 100%;
+        padding: 0 0 10px 30px;
+    }
+
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .gallery-container {
+        flex: 0 0 33,333%;
+        margin: 5px;
+        position: relative;
+    }
+
+    .gallery-image {
+        width: 190px;
+        height: 190px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+    }
+
+    .gallery-icons {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        background-color: rgba(2, 48, 71, .6);
+        opacity: 0;
+        border-radius: 20px;
+
+        ul {
+            height: 190px;
+            margin: 0;
+            padding: 82px 0 0;
+            border-radius: 20px;
+
+        }
+        li {
+            list-style-type: none;
+            display: inline;
+            color: $color-light;
+            font-size: 0;
+        }
+    }
+
+    .gallery-container:hover {
+        .gallery-icons {
+            opacity: 1;
+            transition: opacity 1s ease;
+            li {
+                font-size: 20px;
+                color: $color-main;
+                cursor: pointer;
+                
+            }
+        }
+    }
+    .footer {
+        margin-top: 30px;
+        text-align: center;
+        a {
+        color: $color-main;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .home-wrapper {
+        padding: 50px;
+    }
+
+    .home-nav {
+        margin-bottom: 20px;
+    }
+
+    .home-options {
+        flex: 0 48%;
+        height: 150px;
+    }
+
+    .options-gallery {
+        img {
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .options-title {
+        top: 80%;
+    }
+
+    .opening-title {
+        top: 50%;
+    }
+
+    .carousel {
+        margin: 100px 5px;
+    }
+
+    .carousel-cell {
+        height: 250px;
+        margin-bottom: 50px;
+    }
+
+    .carousel-picture {
+        width: 250px;
+        img {
+            height: 100%;
+        }
+    }
+
+    .carousel-text {
+        padding: 20px;
+    }
+
+    .gallery-container {
+        flex: 0 0 23%;
+        margin: 10px;
+    }
+
+    .gallery-image {
+        width: 100%;
+        img {
+            height: 100%;
+        }
+    }
+
+    .gallery-icons {
+        ul {
+            padding: 20px 0 0;
+        }
+    }
+
+    .footer {
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .home-wrapper {
+        padding: 20px;
+    }
+
+    .home-nav {
+        flex-direction: column;
+    }
+
+    .home-options {
+        flex: 1 100%; 
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .home-wrapper {
+        margin: 10px;
+    }
+}
